@@ -8,4 +8,5 @@ import com.telecom.entity.NetworkFunctionInstance;
 @Repository
 public interface NetworkFunctionRepo extends JpaRepository<NetworkFunctionInstance, String> {
 
+	// Comments
 }
