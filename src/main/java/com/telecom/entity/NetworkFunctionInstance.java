@@ -1,23 +1,26 @@
 package com.telecom.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class NetworkFunctionInstance {
 	@Id
 	private String NetworkFunctionInstanceId;
-	
+
 	@Enumerated(EnumType.STRING)
 	private NetworkFunctionInstanceType type;
-	
+
 	@Enumerated(EnumType.STRING)
 	private NfStatus status;
-	
+
 	private int heartBeatTimer;
-	
+
+	@OneToOne(cascade = CascadeType.ALL)
 	private NfProfile nfProfile;
 
 	public String getNetworkFunctionInstanceId() {
@@ -65,7 +68,5 @@ public class NetworkFunctionInstance {
 		return "NetworkFunctionInstance [NetworkFunctionInstanceId=" + NetworkFunctionInstanceId + ", type=" + type
 				+ ", status=" + status + ", heartBeatTimer=" + heartBeatTimer + ", nfProfile=" + nfProfile + "]";
 	}
-	
-	
 
 }
