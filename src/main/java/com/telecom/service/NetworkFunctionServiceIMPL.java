@@ -27,6 +27,8 @@ public class NetworkFunctionServiceIMPL implements NetworkFunctionService {
 		 new RecordNotFounException();
 			//punam demo check
 	}return null;
-	
+	public static void newMethod(){
+		
+	}
 	}
 }
